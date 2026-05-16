@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Pacifico&family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-handwriting: "Dancing Script", cursive;
+  --font-cursive: "Pacifico", cursive;
+  --font-serif: "Playfair Display", serif;
+
+  --color-brand-pink: #fce4ec;
+  --color-brand-peach: #fff3e0;
+  --color-brand-cream: #fffdf7;
+  --color-brand-lavender: #f3e5f5;
+  --color-brand-gold: #d4af37;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-cream text-slate-800 overflow-hidden;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(252, 228, 236, 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(243, 229, 245, 0.4) 0%, transparent 50%);
+  }
+}
+
+@layer components {
+  .paper-texture {
+    background-color: #fffdf7;
+    background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1), inset 0 0 100px rgba(0,0,0,0.02);
+  }
+
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-md border border-white/50 shadow-xl rounded-2xl;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(252, 228, 236, 0.5);
+  }
+}
+
+/* Swiper custom styles for scrapbook */
+.swiper-pagination-bullet-active {
+  background: #f06292 !important;
+}
+
+.scrapbook-page {
+  @apply relative w-full h-full p-8 md:p-12 overflow-hidden flex flex-col items-center justify-center;
+}
+
+.sticker {
+  @apply absolute pointer-events-none drop-shadow-md;
+}
+
+.polaroid-frame {
+  @apply bg-white p-3 pb-10 shadow-lg rotate-2 transition-transform hover:rotate-0 hover:scale-105 duration-300;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.tape {
+  @apply absolute bg-brand-pink/60 h-6 w-20 backdrop-blur-[1px] rotate-[-15deg] z-10 opacity-80;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
